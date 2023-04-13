@@ -1,18 +1,14 @@
 const {Router}=require("express");
-const controllers="NADA";
+const {createDoghandler}=require("./../handlers/Dogs/createDoghandler");
+const {getAllDogshandler}=require("./../handlers/Dogs/getAllDogshandler");
+const {getByRacehandler}=require("./../handlers/Dogs/getByRacehandler");
 
 const server=Router();
 
-server.get("/", async (req,res)=>{
-    res.send("Holas");
-})
+server.get("/",getAllDogshandler);
 
-server.get("/:idRaza", async (req,res)=>{
-    res.send("chau");
-})
+server.get("/:idRace", getByRacehandler);
 
-server.post("/", async (req,res)=>{
-    res.send("posteo");
-})
+server.post("/", createDoghandler);
 
 module.exports=server;

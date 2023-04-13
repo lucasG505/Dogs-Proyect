@@ -1,10 +1,8 @@
 const {Router}=require("express");
-const controllers="NADA";
+const {getAllTemperamentshandler}=require("./../handlers/Temperaments/getAllTemperamentshandler");
 
 const server=Router();
 
-server.get("/", async (req,res)=>{
-    res.send("Holas");
-})
+server.get("/", getAllTemperamentshandler);
 
 module.exports=server;

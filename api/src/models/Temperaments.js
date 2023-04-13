@@ -1,4 +1,4 @@
-const { DataTypes, UUIDV4 } = require('sequelize');
+const { DataTypes} = require('sequelize');
 module.exports = (sequelize) => {
     // defino el modelo
     sequelize.define('temperament', {
@@ -6,7 +6,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
-            isAlpha: true,
             notEmpty: true
         }
       },

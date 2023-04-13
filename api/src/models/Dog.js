@@ -16,15 +16,16 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull:true,
+      defaultValue: "https://imgs.search.brave.com/tmWdwfGY4XY3A1uh0Dum_5JTFeHjXhEbVGlpgh8sSQE/rs:fit:368:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4y/UWRWd2lrOTRqeTBu/dnBGR0pvS1dnSGFK/aSZwaWQ9QXBp",
     },
-    heigthMax: {
+    heightMax: {
       type: DataTypes.STRING,
       allowNull:false,
       validate: {
         isNumeric:true
       }
     },
-    heigthMin: {
+    heightMin: {
       type: DataTypes.STRING,
       allowNull:false,
       validate: {
