@@ -8,7 +8,7 @@ const getAllDogshandler= async (req, res)=>{
             res.status(200).json(namedDogs);
         }else {
             const allDogs = await getAllDogs();
-            console.log(allDogs);
+            
             res.status(200).json(allDogs);
         }    
     } catch (error) {

@@ -2,14 +2,15 @@ const { Dog,Temperament } = require("./../db");
 const {getApiData}=require("./getApiData");
 const {getDbData}=require("./getDbData");
 
-const createDog = async ( name, image, heightMax, heightMin, weightMax, weightMin, lifespan, temperaments ) => {
-    let newDog = await Dog.create(name, image, heightMax, heightMin, weightMax, weightMin, lifespan);
+const createDog = async ( name, image, heightMax, heightMin, weightMax, weightMin, lifeSpan, temperaments ) => {
+    console.log();
+    let newDog = await Dog.create({name, image, heightMax, heightMin, weightMax, weightMin, lifeSpan});
     temperaments.map(async(el)=>{
         const temperament= await Temperament.findOne({
             attributes: ["id"],
             where: {name:el},
         })
-        newDog.addTemperament(temperament)
+        newDog.addTemperament(temperament.id);
     })
     return newDog;
 };
@@ -24,7 +25,7 @@ const getByRace = async (race, source)=>{
     if(source==="api"){
         const apiDogs= await getApiData();
         const dogs= apiDogs.filter(el=>el.id===Number(race));
-        console.log(dogs);
+        
         return dogs;
     }else{
         const bddDogs=await getDbData();
