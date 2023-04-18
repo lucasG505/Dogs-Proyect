@@ -4,7 +4,7 @@ const Landing = () => {
     return (
         <div className={style.landing}>
             <div id={style.tittle}>
-                <h1>Welcome to DOGS-PEDIA!</h1>
+                <h1>Welcome to DOG´S WORLD!</h1>
                 <h2>Find the ideal dog for your needs within minutes or let your imagination fly by creating your own perfect dog</h2>
             </div>
             <Link to="/home"><button className={style.btnLanding}><span>Find Now!</span></button></Link>
