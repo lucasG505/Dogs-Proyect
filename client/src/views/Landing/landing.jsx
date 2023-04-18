@@ -3,9 +3,11 @@ import style from "./landing.module.css";
 const Landing = () => {
     return (
         <div className={style.landing}>
-            <p id={style.tittle}>Welcome</p>
-            <p>Find your ideal dog!</p>
-            <Link to="/home">Find Now</Link>
+            <div id={style.tittle}>
+                <h1>Welcome to DOGS-PEDIA!</h1>
+                <h2>Find the ideal dog for your needs within minutes or let your imagination fly by creating your own perfect dog</h2>
+            </div>
+            <Link to="/home"><button className={style.btnLanding}><span>Find Now!</span></button></Link>
         </div>
     )
 };

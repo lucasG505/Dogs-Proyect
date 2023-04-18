@@ -1,18 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .landing {
-    color: red;
-    font-size: 60px;
-    text-decoration: none;
-}
-
-#tittle{
-    font-size: 90px;
-}
-
-body {
-    
-    background-size: 100%;
+    background-image: url('../../image/Golden-retriever-dogs-high-definition-wallpapers.webp');
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
+}
+
+#tittle {
+    position: relative;
+    top: 20%;
+}
+
+#tittle h1 {
+    color: #FF6D60;
+    font-family: 'Trocchi', serif;
+    font-size: 70px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+    text-align: center;
+}
+
+#tittle h2 {
+    position: absolute;
+    top: 200%;
+    left: 8%;
+    text-align: center;
+    color: #225f34;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+
+.btnLanding {
+    border-radius: 10px;
+    background-color: #F7D060;
+    border: solid 5px #F3E99F;
+    color: #FF6D60;
+    font-family: 'Trocchi', serif;
+    ;
+    text-align: center;
+    font-size: 300%;
+    padding: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    left: 2.5%;
+    position: relative;
+    bottom: 15%;
+    margin-left: 35rem;
+    margin-top: 500px;
+    box-shadow: 30px 40px 15px 0px #7c692f
+}
+
+.btnLanding span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btnLanding span:after {
+    content: '\00ab';
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.btnLanding:hover span {
+    padding-left: 25px;
+}
+
+.btnLanding:hover {
+    background-color: #fbc420;
+    color: #f94131;
+}
+
+.btnLanding:hover span:after {
+    opacity: 1;
+    right: 0;
 }
