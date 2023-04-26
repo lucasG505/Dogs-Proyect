@@ -3,7 +3,7 @@ require("dotenv").config();
 const {API_KEY}=process.env;
 
 const getApiData = async () =>{
-    const apiDogsRaw= (await axios.get("https://api.thedogapi.com/v1/breeds")).data;
+    const apiDogsRaw= (await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data;
     const apiDogsClean = apiDogsRaw.map(el=>{
         return {
             id: el.id,
