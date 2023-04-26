@@ -1,3 +1,4 @@
+import style from "./pagination.module.css";
 const LEFT_PAGE = 'LEFT';
 const RIGHT_PAGE = 'RIGHT';
 
@@ -13,17 +14,17 @@ const range = (from, to) => {
 };
 
 const fetchPageNumbers = (currentPage, totalPages) => { //currentpage 3 total 22
-    if(totalPages > 7){
+    if (totalPages > 7) {
         let startPage = Math.max(2, currentPage - 1); //2
         const endPage = Math.min(totalPages - 1, currentPage + 1); //4
         let pages = range(startPage, endPage);//[2,3,4]
-        
+
         if (endPage === totalPages) startPage = endPage - 2;
-        
+
         const hasLeftSpill = startPage > 2; //false
         const hasRightSpill = (totalPages - endPage) > 1; //true
         const spillOffset = 5 - (pages.length + 1);//1
-        
+
         switch (true) {
             case (!hasLeftSpill && hasRightSpill): {
                 const extraPages = range(endPage + 1, endPage + spillOffset);
@@ -56,44 +57,47 @@ const Pagination = (props) => {
     const numbersToNavigate = fetchPageNumbers(currentPage, totalPages);
 
     return (
-        <div>
-            <ul>
+        <div className={style.pagination}>
+            
 
-                {numbersToNavigate.map((number) => {
-                    if(number===LEFT_PAGE){
-                        return (
-                            <li
-                                key={number}
-                                className={currentPage === 2 ? "disabled" : ""}
-                                onClick={() => onPageChanged(currentPage-1)}
-                            >
-                                <span aria-hidden="true">&laquo;</span>
-                            </li>
-                        )
-                    }
-                    if(number===RIGHT_PAGE){
-                        return (
-                            <li
-                                key={number}
-                                className={currentPage === totalPages-2 ? "disabled" : ""}
-                                onClick={() => onPageChanged(currentPage+1)}
-                            >
-                                <span aria-hidden="true">&raquo;</span>
-                            </li>
-                        )
-                    }
-
+            {numbersToNavigate.map((number) => {
+                if (number === LEFT_PAGE) {
                     return (
-                        <li
+                        <button
                             key={number}
-                            className={currentPage === number ? "active" : ""}
-                            onClick={() => onPageChanged(number)}
+                            className={style.arrow}
+                            id={currentPage === 2 ? style.disabled : style.activeArrow}
+                            onClick={() => onPageChanged(currentPage - 1)}
                         >
-                            <span >{number}</span>
-                        </li>
+                            <span aria-hidden="true">&laquo;</span>
+                        </button>
                     )
-                })}
-            </ul>
+                }
+                if (number === RIGHT_PAGE) {
+                    return (
+                        <button
+                            key={number}
+                            className={style.arrow}
+                            id={currentPage === totalPages - 2 ? style.disabled : style.activeArrow}
+                            onClick={() => onPageChanged(currentPage + 1)}
+                        >
+                            <span aria-hidden="true">&raquo;</span>
+                        </button>
+                    )
+                }
+
+                return (
+                    <button
+                        key={number}
+                        className={style.number}
+                        id={currentPage === number ? style.active : ""}
+                        onClick={() => onPageChanged(number)}
+                    >
+                        <span>{number}</span>
+                    </button>
+                )
+            })}
+
 
         </div>
     );

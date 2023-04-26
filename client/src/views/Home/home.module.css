@@ -1,0 +1,6 @@
+.home{
+    overflow-y: scroll;
+    z-index: 0;
+    background-color: #02393e;
+    font-family: 'Lato' !important;
+}
