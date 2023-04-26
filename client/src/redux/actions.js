@@ -8,25 +8,30 @@ export const FILTER_TEMPS="FILTER_TEMPS";
 export const FILTER_DB="FILTER_DB";
 export const SORT_NAME="SORT_NAME";
 export const SORT_WEIGHT="SORT_WEIGHT";
+export const CLEAN_DETAIL="CLEAN_DETEAIL";
+export const SET_PAGE="SET_PAGE";
 
 
 export const getDogs= ()=> {
     return async function(dispatch){
-        const dogs= await axios.get("http://localhost:3001/dogs").data;
+        const dogs= (await axios.get("http://localhost:3001/dogs")).data;
+        
         dispatch({type:GET_DOGS, payload:dogs});
     }
 };
 
 export const getDog = (name)=>{
     return async function (dispatch){
-        const dog = await axios.get(`http://localhost:3001/dogs?name=${name}`).data;    
+        const dog = (await axios.get(`http://localhost:3001/dogs?name=${name}`)).data;    
         dispatch({type:GET_DOG, payload:dog});
     }
 };
 
 export const getDogByRace = (id)=>{
     return async function (dispatch){
-        const dog = await axios.get(`http://localhost:3001/dogs/:${id}`);
+        
+        const dog = (await axios.get(`http://localhost:3001/dogs/${id}`)).data[0];
+        
         dispatch({type:GET_DOG_RACE,payload:dog});
     }
 };
@@ -40,10 +45,16 @@ export const createDog = (body)=>{
 
 export const getTemperaments = ()=>{
     return async function(dispatch){
-        const temps=await axios.get(`http://localhost:3001/temperaments`).data;
+        let temps=(await axios.get(`http://localhost:3001/temperaments`)).data;
+        temps=temps.sort(function (a,b){
+            if(a.name.toLowerCase()<b.name.toLowerCase()) return -1;
+            if(a.name.toLowerCase()>b.name.toLowerCase()) return 1;
+            return 0;
+        })
         dispatch({type:GET_TEMPERAMENTS,payload:temps});
     }
 };
+
 
 export const filterByTemps=(payload)=>{
     return {
@@ -72,3 +83,16 @@ export const sortByWeight =(payload)=>{
         payload
     }
 };
+
+export const cleanDetail =()=>{
+    return {
+        type:CLEAN_DETAIL,
+    }
+};
+
+export const setPage=(payload)=>{
+    return {
+        type:SET_PAGE,
+        payload
+    }
+}

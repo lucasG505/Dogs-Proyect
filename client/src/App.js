@@ -16,7 +16,7 @@ function App() {
         
       </Route>
 
-      <Route path="/detail" render={()=><Detail/>}>
+      <Route path="/detail/:id" render={()=><Detail/>}>
         
       </Route>
 
