@@ -7,13 +7,13 @@ const Card = (props) => {
         temps = temps.join();
         return (
             <div className={style.card}>
-
                 <img src={props.image} alt="Fail" />
-                <Link to={`/detail/${props.id}`} >
-                    <p>{props.name}</p>
-                </Link>
-                <p>{`${props.weightMin} - ${props.weightMax}`}</p>
-                <p>{temps}</p>
+                <div className={style.cardContent} >
+                    <Link to={`/detail/${props.id}`} >
+                        <h2>{props.name}</h2>
+                    </Link>
+                    <p>Weight:{`${props.weightMin} - ${props.weightMax}`}. Temperaments: {temps}</p>
+                </div>
             </div>
         )
     } else {

@@ -37,9 +37,9 @@ export const getDogByRace = (id)=>{
 };
 
 export const createDog = (body)=>{
-    return async function (){
+    return async function (dispatch){
         const response=await axios.post(`http://localhost:3001/dogs`, body);
-        return response;
+        dispatch({type:CREATE_DOG, payload:response.data});
     }
 };
 

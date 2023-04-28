@@ -12,6 +12,12 @@ import Pagination from "../../components/Pagination/paginationTry";
 
 const Home=()=>{
     const dispatch=useDispatch();
+    const filtered = useSelector(state => state.filtered);
+    const dogs = useSelector(state => state.dogs);
+    const filterDogsDB = useSelector(state => state.filterDogsDb);
+    const filterDogsTemp = useSelector(state => state.filterDogsTemp);
+    const page=useSelector(state => state.page);
+    const notSelected=useSelector(state=>state.notSelected);
 
     const onSearch=(name)=>{
         dispatch(getDog(name));
@@ -22,14 +28,9 @@ const Home=()=>{
         dispatch(getTemperaments());
     },[dispatch]);
 
-    const filtered = useSelector(state => state.filtered);
-	const dogs = useSelector(state => state.dogs);
-	const filterDogsDB = useSelector(state => state.filterDogsDb);
-	const filterDogsTemp = useSelector(state => state.filterDogsTemp);
-	const page=useSelector(state => state.page);
 	
 	let filterDogs;
-	if ((filtered.length === 0 && filterDogsDB.length === 0) && filterDogsTemp.length === 0) {
+	if ((filtered.length === 0 && filterDogsDB.length === 0) && filterDogsTemp.length === 0 && notSelected) {
 		filterDogs = dogs;
 	} else {
 		filterDogs = dogs.filter(dog => {

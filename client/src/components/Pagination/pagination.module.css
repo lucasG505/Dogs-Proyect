@@ -15,9 +15,9 @@
     box-shadow: 0px 4px 8px 0px rgba(31, 41, 55, 0.14);
     position: relative;
     left: 30%;
-    border: 3px solid var(--interactive-color);
+    border: 3px solid #539de2;
     border-radius: 20px;
-    background-color: #675ec9;
+    background-color: #9FC5E8;
 }
 
 
@@ -25,28 +25,30 @@
 .number {
     font-weight: 600;
     font-size: 16px;
-    color: #D1D5DB;
+    color: #fc8200;
     padding-left: 16px;
     margin-left: 10px;
     padding-right: 16px;
     margin-right: 10px;
+    cursor: pointer;
     border: none;
     background: none;
 }
 
 #active {
-    color: var(--black-color);
+    color: #17690c;
     position: relative;
 }
 
 .arrow {
     padding-left: 16px;
     padding-right: 16px;
-    color: var(--interactive-color);
+    color: #fc8200;
     margin-left: 10px;
     margin-right: 10px;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
  

@@ -20,13 +20,13 @@ a:active {
     width:100%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background-color: rgb(65, 62, 62);
+    background-color: #A2D39C;
     overflow: hidden;
     z-index: 500;
 }
 
 .navMenu a {
-    color: #f6f4e6;
+    color: #3D583F;
     font-family: 'Trocchi', serif;
     text-decoration: none;
     font-size: 1.2em;
@@ -40,13 +40,13 @@ a:active {
 }
 
 .navMenu a:hover {
-    color: #fddb3a;
+    color: #D2FFBD;
 }
 
 .navMenu .dot {
     width: 6px;
     height: 6px;
-    background: #fddb3a;
+    background: #D2FFBD;
     border-radius: 50%;
     opacity: 0;
     -webkit-transform: translateX(30px);

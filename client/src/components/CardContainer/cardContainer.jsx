@@ -9,11 +9,12 @@ const CardContainer = () => {
 	const filterDogsDB = useSelector(state => state.filterDogsDb);
 	const filterDogsTemp = useSelector(state => state.filterDogsTemp);
 	const page = useSelector(state => state.page);
+	const notSelected = useSelector(state=> state.notSelected);
 
 	let firstId = (page - 1) * 8;
 	let lastId = firstId + 8;
 	let filterDogs;
-	if ((filtered.length === 0 && filterDogsDB.length === 0) && filterDogsTemp.length === 0) {
+	if ((filtered.length === 0 && filterDogsDB.length === 0) && filterDogsTemp.length === 0 && notSelected) {
 		filterDogs = dogs;
 	} else {
 		filterDogs = dogs.filter(dog => {

@@ -6,7 +6,7 @@
 .searchBox {
     width: fit-content;
     height: fit-content;
-    position: absolute;
+    position: relative;
     left: 35%;
     top: 4.5%;
 }
@@ -21,13 +21,13 @@
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-    background-color: #22a6b3;
+    background-color: #9FC5E8;
     padding-right: 40px;
-    color: #ffffff;
+    color: #fc8200;
 }
 
 .inputSearch::placeholder {
-    color: rgba(255, 255, 255, .5);
+    color: #fc8200;
     font-size: 18px;
     letter-spacing: 2px;
     font-weight: 100;
@@ -44,7 +44,7 @@
     border-radius: 50%;
     position: absolute;
     right: 0px;
-    color: #ffffff;
+    color: #fc8200;
     background-color: transparent;
     pointer-events: painted;
 }
@@ -53,7 +53,7 @@
     width: 300px;
     border-radius: 0px;
     background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-bottom: 1px solid #fc8200;
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
@@ -61,7 +61,7 @@
     width: 300px;
     border-radius: 0px;
     background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-bottom: 1px solid #fc8200;
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 

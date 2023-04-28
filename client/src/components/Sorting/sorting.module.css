@@ -7,7 +7,7 @@
 .wrap{
     display: flex;
     position: relative;
-    right: -50%;
+    right: -60%;
     top: -30px;
 }
 
@@ -16,7 +16,7 @@
     display: flex;
     position: relative;
     margin-left: 7px;
-    color: #f39c12;
+    color: #f88f1e;
     top: 5px;
 }
 
@@ -31,8 +31,8 @@
     right: 15%;
     flex: 1;
     padding: 0 1em;
-    color: #fff;
-    background-color: var(--darkgray);
+    color: #fc8200;
+    background-color: #9FC5E8;
     background-image: none;
     cursor: pointer;
 }
@@ -59,12 +59,12 @@
     top: -7px;
     right: 0;
     padding: 1em;
-    background-color: #34495e;
+    background-color: #9FC5E8;
     transition: .25s all ease;
     pointer-events: none;
 }
 
 /* Transition */
 .container:hover::after {
-    color: #f39c12;
+    color: #fc8200;
 }

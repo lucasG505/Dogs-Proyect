@@ -11,9 +11,8 @@
     margin-top: 8px;
     margin-bottom: 8px;
     overflow: hidden;
-    cursor: pointer;
     position: relative;
-    color: rgb(28, 3, 3);
+    color: #4E2C0E;
     box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -44,7 +43,7 @@
     max-width: 80%;
     transition: opacity .3s ease-out;
     inset: auto auto 80px 30px;
-    background-color: beige;
+    background-color: #F6B26B;
     border-radius: 15px;
 }
 
